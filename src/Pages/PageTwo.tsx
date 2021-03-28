@@ -1,6 +1,17 @@
+import { Button } from "antd";
+import { HeartOutlined } from '@ant-design/icons';
+import React, { useState } from "react";
+
 const PageTwo = () => {
+  const [liked, setLiked] = useState(false);
+
   return (
-    <h1>Hello from Page 2</h1>
+    <div>
+      <Button onClick={() => setLiked(!liked)}>
+        {!liked && <HeartOutlined />}
+        {liked ? 'Unlike' : 'Like'}
+      </Button>
+    </div>
   );
 };
 
